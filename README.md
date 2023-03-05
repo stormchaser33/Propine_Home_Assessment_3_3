@@ -1,30 +1,21 @@
-## Question 1 - Programming
-_We're looking at your programming ability. It must not only work, it should be maintainable._
+# Portfolio Value Calculator
+This program calculates the value of a cryptocurrency portfolio based on transaction data stored in a CSV file. The program reads the CSV file, fetches current token values using the CryptoCompare API, and then calculates the current value of each token in the portfolio based on its transactions.
 
-Let us assume you are a crypto investor. You have made transactions over a period of time which is logged in a CSV file at the [data directory](https://raw.githubusercontent.com/Propine/2b-boilerplate/master/data/transactions.csv). Write a command line program that returns the latest portfolio value per token in USD
+##Installation
+Clone the repository
+Run npm install to install the required dependencies
+##Usage
+Place the CSV file with transaction data in the ./data directory.
+Run the program with node index.js.
+The program will output the current value of each token in the portfolio.
+##API Key
+To use the CryptoCompare API, you will need to obtain an API key. You can get a free API key by signing up on the CryptoCompare website.
 
-The program should be ran like this
+By default, the program uses the API key 85050778798081515799695842eac105ffc69647bc9986fa0cd09d16da2cbf86. You can update this in the getPortfolioValue() function if you have a different API key.
 
-```
-npm run start
-```
+##CSV File Format
+The CSV file should have the following columns:
 
-On running, it should return the latest portfolio value per token in USD
-
-The CSV file has the following columns
- - timestamp: Integer number of seconds since the Epoch
- - transaction_type: Either a DEPOSIT or a WITHDRAWAL
- - token: The token symbol
- - amount: The amount transacted
-
-Portfolio means the balance of the token where you need to add deposits and subtract withdrawals. You may obtain the exchange rates from [cryptocompare](https://min-api.cryptocompare.com/documentation) where the API is free. You should write it in Node.js as our main stack is in Javascript/Typescript and we need to assess your proficiency.
-
-
-## Submission
-
-Please take no more than 2 hours to finish. We do not track time, hence you can start and end at your own time. Your answers should comprise of the following
-
-  - Source code that you used for deriving the results
-  - README that explains various design decisions that you took.
-
-Commit your answers in a private Github repository(it's free), please do not fork as other candidates will see your answers. Add Zan(liangzan), Ben(BenPropine) as collaborators then inform us that it is done at zan@propine.com, ben.nguyen@propine.com.
+token: the token symbol (e.g., BTC, ETH)
+transaction_type: the type of transaction (DEPOSIT or WITHDRAWAL)
+amount: the amount of the token involved in the transaction.
